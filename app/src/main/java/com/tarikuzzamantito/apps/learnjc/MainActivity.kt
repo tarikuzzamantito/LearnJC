@@ -28,6 +28,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.tarikuzzamantito.apps.learnjc.custom.MyBottomAppBar
 import com.tarikuzzamantito.apps.learnjc.custom.MyColumn
+import com.tarikuzzamantito.apps.learnjc.custom.MyFloatingActionButton
 import com.tarikuzzamantito.apps.learnjc.custom.MySurface
 import com.tarikuzzamantito.apps.learnjc.custom.MyTopAppBar
 import com.tarikuzzamantito.apps.learnjc.ui.theme.LearnJCTheme
@@ -43,7 +44,7 @@ class MainActivity : ComponentActivity() {
                     topBar = { MyTopAppBar(this) },
                     bottomBar = { MyBottomAppBar(this) },
                     floatingActionButton = {
-                        FloatingActionButton(onClick = {}) { }
+                        MyFloatingActionButton(context = this)
                     },
                     modifier = Modifier.fillMaxSize()
                 ) { innerPadding ->

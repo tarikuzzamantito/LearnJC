@@ -255,3 +255,20 @@ fun MyBottomAppBar(context: Context) {
         }
     }
 }
+
+@Composable
+fun MyFloatingActionButton(context: Context) {
+    FloatingActionButton(
+        onClick = {
+            Toast.makeText(context, "Clicked Profile Icon", Toast.LENGTH_SHORT).show()
+        },
+        containerColor = Color.Magenta,
+        contentColor = Color.White
+    ) {
+        Icon(
+            painter = painterResource(id = R.drawable.icon_add_24),
+            contentDescription = "Add Note",
+            tint = colorResource(id = R.color.white)
+        )
+    }
+}
