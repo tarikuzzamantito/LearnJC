@@ -13,14 +13,24 @@
         android:theme="@style/Theme.LearnJC"
         tools:targetApi="31">
         <activity
-            android:name=".groceryapp.GroceryAppActivity"
+            android:name=".navigation.NavigationAppActivity"
             android:exported="true"
-            android:label="@string/grocery_app_name">
+            android:label="@string/navigation_app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".groceryapp.GroceryAppActivity"
+            android:exported="true"
+            android:label="@string/grocery_app_name">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
         </activity>
         <activity
             android:name=".delegateim.ObserveNetworkStateActivity"
@@ -30,11 +40,14 @@
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.LearnJC">
-            <!--<intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
     </application>
 
