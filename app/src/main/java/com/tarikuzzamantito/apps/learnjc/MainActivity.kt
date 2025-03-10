@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
@@ -25,12 +26,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.tarikuzzamantito.apps.learnjc.custom.MyBottomAppBar
+import com.tarikuzzamantito.apps.learnjc.custom.MyCard
 import com.tarikuzzamantito.apps.learnjc.custom.MyColumn
 import com.tarikuzzamantito.apps.learnjc.custom.MyFloatingActionButton
+import com.tarikuzzamantito.apps.learnjc.custom.MyGrid
+import com.tarikuzzamantito.apps.learnjc.custom.MyLazyColumn
 import com.tarikuzzamantito.apps.learnjc.custom.MySurface
 import com.tarikuzzamantito.apps.learnjc.custom.MyTopAppBar
+import com.tarikuzzamantito.apps.learnjc.custom.ScrollingColumn
+import com.tarikuzzamantito.apps.learnjc.custom.ScrollingRow
 import com.tarikuzzamantito.apps.learnjc.ui.theme.LearnJCTheme
 
 class MainActivity : ComponentActivity() {
@@ -46,9 +53,13 @@ class MainActivity : ComponentActivity() {
                     floatingActionButton = {
                         MyFloatingActionButton(context = this)
                     },
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier
+                        .fillMaxSize()
                 ) { innerPadding ->
-                    MyColumn()
+                    val modifier = Modifier
+                        .padding(top = 10.dp)
+                        .padding(innerPadding)
+                    MyGrid(this)
                 }
 
             }
