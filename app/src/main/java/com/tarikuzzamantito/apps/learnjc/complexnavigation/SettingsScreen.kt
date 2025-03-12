@@ -27,7 +27,7 @@ fun SettingsScreen(
             .padding(100.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Settings Screen", fontSize = 40.sp)
+        Text(text = "Settings Screen", fontSize = 30.sp)
         Button(onClick = {
             /* Navigate to Home Screen */
             navigateToHomeScreen()

@@ -26,7 +26,7 @@ fun HomeScreen(
             .padding(100.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Home Screen", fontSize = 40.sp)
+        Text(text = "Home Screen", fontSize = 30.sp)
         Button(onClick = {
             /* Navigate to Profile Screen */
             navigateToProfileScreen(123, true)

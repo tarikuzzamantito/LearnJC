@@ -1,4 +1,4 @@
-package com.tarikuzzamantito.apps.learnjc.complexnavigation
+package com.tarikuzzamantito.apps.learnjc.complexnavigation.navigate
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavGraphBuilder
@@ -7,6 +7,9 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.tarikuzzamantito.apps.learnjc.complexnavigation.HomeScreen
+import com.tarikuzzamantito.apps.learnjc.complexnavigation.ProfileScreen
+import com.tarikuzzamantito.apps.learnjc.complexnavigation.SettingsScreen
 
 /**
  * Created by Tarikuzzaman on 3/11/2025 11:04 AM
@@ -44,7 +47,9 @@ fun addHomeScreen(
                     //"${NavRoute.Profile.path}?${NavRoute.Profile.id}=$id&${NavRoute.Profile.showDetails}=$showDetails"
                     //"home/id/showDetails"
                     //NavRoute.Profile.path.plus(id.toString()).plus(showDetails.toString())
-                    NavRoute.Profile.path.plus("/$id/$showDetails")
+
+                    //NavRoute.Profile.path.plus("/$id/$showDetails")
+                    NavRoute.Profile.createRoute(123, false)
 
                 )
             },
@@ -62,18 +67,18 @@ fun addProfileScreen(
     navGraphBuilder.composable(
         route = NavRoute.Profile.path.plus("/{id}/{showDetails}"),
         arguments = listOf(
-            navArgument(NavRoute.Profile.id) {
+            navArgument("id") {
                 type = NavType.IntType
             },
-            navArgument(NavRoute.Profile.showDetails) {
+            navArgument("showDetails") {
                 type = NavType.BoolType
             }
         )
     ) { navBackStackEntry ->
         val args = navBackStackEntry.arguments
         ProfileScreen(
-            id = args?.getInt(NavRoute.Profile.id)!!,
-            showDetails = args.getBoolean(NavRoute.Profile.showDetails),
+            id = args?.getInt("id")!!,
+            showDetails = args.getBoolean("showDetails"),
             navigateToSettingsScreen = { navController.navigate(NavRoute.Settings.path) },
             navigateToHomeScreen = { navController.navigate("home") },
         )

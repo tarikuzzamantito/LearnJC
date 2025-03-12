@@ -28,9 +28,9 @@ fun ProfileScreen(
             .padding(100.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Profile Screen")
-        Text(text = "Profile ID: $id", fontSize = 40.sp)
-        Text(text = "Show Details: $showDetails", fontSize = 40.sp)
+        Text(text = "Profile Screen", fontSize = 30.sp)
+        Text(text = "Profile ID: $id", fontSize = 30.sp)
+        Text(text = "Show Details: $showDetails", fontSize = 30.sp)
 
         Button(onClick = {
             /* Navigate to Settings Screen */
